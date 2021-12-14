@@ -1,0 +1,83 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -Contact
+{% endblock title %}
+ {% block content %} 
+        <div class="page-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa fa-envelope-o"></i> Contact us</h2>
+                    </div><!-- end col -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href=" {% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'admission' %}">Admission</a></li>
+                            <li class="breadcrumb-item active">Contact</li>
+                        </ol>
+                    </div><!-- end col -->                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
+
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 ">
+        <div class="topadd_bar"><a href="#"><img src="../images/addbanner_728x90_V1.jpg" alt=""></a></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-sm-8 col-sm-8">
+         
+          <div class="contact_address wow fadeInRightBig">
+            <h3>Gargi Memorial Institute of Technology</h3>
+           
+             <li>
+              <span><b>College Address:</b></span> Gargi Memorial Institute of Technology
+               Balarampur, Mouza Beralia,Baruipur, Kolkata - 700144
+               <li>
+              <span><b>Mobile:</b></span>  8240192964 / 8100001990
+              </li>
+               <li>
+              <span><b>Admission: </b></span>  Mr. Binay Panda (VP,Mktg & Students Affair)- 83369 42309 / Mr. Pratik Kr Halder- 83369 42266 / Ms Moumita Saha Choudhury (8100001990/8240192964)
+              </li>
+              <li>
+              <span><b>Email:</b></span>  admissiongmit@gmail.com
+              </li>
+  
+          <br><br><br>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-4 col-sm-4"> 
+        <img src="/static/upload/contact.jpeg " alt=""  style="height:285px; weight:568px" class="img-fluid">
+        <br><br><br>
+      </div>
+     
+  </div>
+</section>
+        
+ {% endblock content %}
+ {% block script%}
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == 'success'%}
+<script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+{% elif message.tags == 'info' %}
+<script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+{% elif message.tags == 'warning' %}
+<script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+{% elif message.tags == 'error' %}
+<script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if form.errors %}
+<script type=text/javascript>toastr.error('{{ form.errors|escape }}')</script>
+{% endif %}
+
+{% endblock script%}
+  

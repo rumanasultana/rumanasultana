@@ -1,0 +1,121 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -Placement 
+{% endblock title %}
+
+{% block content %}
+    
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-title-area">
+                                <ol class="breadcrumb hidden-xs-down">
+                                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'cdc' %}">Blog</a></li>
+                                    <li class="breadcrumb-item active">The golden rules you need to know for a positive life</li>
+                                </ol>
+
+                                <span class="color-aqua"><a href="placement_01.html" title="">Placement</a></span>
+
+                              
+
+                                <div class="blog-meta big-meta">
+                                    <small><a href="{% url 'single' %}" title="">21 July, 2017</a></small>
+                                    <small><a href="blog-author.html" title="">by Jessica</a></small>
+                                   
+                                </div><!-- end meta -->
+
+                               
+                            </div><!-- end title -->
+
+                            <div class="single-post-media">
+                            <h3><strong>Nam non velit est. Sed lobortis arcu vitae nunc molestie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </strong></h3>
+                                <img src="/static/upload/menu_08.jpg" alt="" class="img-fluid">
+                            </div><!-- end media -->
+
+                            <div class="blog-content">  
+                                <div class="pp">
+                                    
+
+                                    <p>Vivamus non condimentum orci. Pellentesque venenatis nibh sit amet est vehicula lobortis. Cras eget aliquet eros. Nunc lectus elit, suscipit at nunc sed, finibus imperdiet ipsum. Maecenas dapibus neque sodales nulla finibus volutpat. Integer pulvinar massa vitae ultrices posuere. Proin ut tempor turpis. Mauris felis neque, egestas in lobortis et, sodales non ante. Ut vestibulum libero quis luctus tempus. Nullam eget dignissim massa. Vivamus id condimentum orci. Nunc ac sem urna. Aliquam et hendrerit nisl massa nunc. </p>
+
+                                    <p>Morbi pharetra porta consequat. Aenean et diam sapien. <a href="#">Interdum et malesuada</a> fames ac ante ipsum primis in faucibus. Pellentesque dictum ligula iaculis, feugiat metus eu, sollicitudin ex. Quisque eu ullamcorper ligula. In vel ex ac purus finibus viverra. Maecenas pretium lobortis turpis. Fusce lacinia nisi in tortor massa nunc.</p>
+
+                                    <ul class="check">
+                                        <li>Integer sit amet odio ac lectus imperdiet elementum.</li>
+                                        <li>Praesent vitae lacus sed lacus ullamcorper mollis.</li>
+                                        <li>Donec vitae metus ac felis vulputate tincidunt non et ex.</li>
+                                        <li>In dapibus sapien at viverra venenatis.</li>
+                                        <li>Pellentesque mollis velit id maximus finibus.</li>
+                                    </ul>
+
+                                    <p>Proin ultricies nulla consectetur, sollicitudin dolor at, sollicitudin mauris. Maecenas at nunc nunc. Ut nulla felis, tincidunt et porttitor at, rutrum in dolor. Aenean id tincidunt ligula. Donec vitae placerat odio. Mauris accumsan nibh ut nunc maximus, ac auctor elit vehicula. Cras leo sem, vehicula a ultricies ac, condimentum vitae lectus. Sed ut eros euismod, luctus nisl eu, congue odio. </p>
+
+                                   
+
+                                    
+                                </div><!-- end pp -->
+                            </div><!-- end content -->
+
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget">
+                               
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Recent Posts</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        <a href="{% url 'single' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="/static/upload/blog_square_01.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">5 Beautiful buildings you need to before dying</h5>
+                                                <small>12 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="{% url 'single' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="/static/upload/blog_square_02.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Let's make an introduction for creative life</h5>
+                                                <small>11 Jan, 2016</small>
+                                            </div>
+                                        </a>
+
+                                        <a href="{% url 'single' %}" class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 last-item justify-content-between">
+                                                <img src="/static/upload/blog_square_03.jpg" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">Did you see the most beautiful sea in the world?</h5>
+                                                <small>07 Jan, 2016</small>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+
+                            <div class="widget">
+                                <h2 class="widget-title">Popular Categories</h2>
+                                <div class="link-widget">
+                                    <ul>
+                                        <li><a href="/computer">Computer Science and Engineering </a></li>
+                                        <li><a href="/electronics">Electronics and Communication Engineering </a></li>
+                                        <li><a href="/electrical">Electrical Engineering</a></li>
+                                        <li><a href="/mechanical">Mechanical Engineering </a></li>
+                                        <li><a href="/civil">Civil Engineering </a></li>
+                                    </ul>
+                                </div><!-- end link-widget -->
+                            </div><!-- end widget -->
+
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+{% endblock content %}

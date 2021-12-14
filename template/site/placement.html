@@ -1,0 +1,99 @@
+{% extends 'core\deptBase.html' %}
+{% load static %}
+{% block title %}
+{{block.super}} -Placement {% endblock title %}
+
+{% block content %}
+<div class="page-title wb">
+   <div class="container">
+       <div class="row">
+           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+               <h2><i class="fa fa-shopping-bag bg-red"></i> Placement <small class="hidden-xs-down hidden-sm-down">Gargi Memorial Institute of Technology </small></h2>
+           </div><!-- end col -->
+           <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+               <ol class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                   <li class="breadcrumb-item"><a href="{% url 'CareerDevelopmentCell' %}">CDC</a></li>
+                   <li class="breadcrumb-item active">Placement</li>
+               </ol>
+           </div><!-- end col -->                    
+       </div><!-- end row -->
+   </div><!-- end container -->
+</div><!-- end page-title -->
+
+<section class="section wb">
+   <div class="container">
+       <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="sidebar">
+             <div class="widget">
+                    <h2 class="widget-title">Recent Posts</h2>
+                    <div class="blog-list-widget">
+                        <div class="list-group">
+                            {% for i in FourNews %}
+                            <a href="{% url 'detailsnews' pk=i.id %}" 
+                            class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="w-100 justify-content-between">
+                                    <img src="{{i.img.url}}" alt="" class="img-fluid float-left">
+                                    <h5 class="mb-1">{{i.headlines}}</h5>
+                                    <small>{{i.postedtime}}</small>
+                                </div>
+                            </a>
+                            {% endfor %}
+                           
+                        </div>
+                    </div><!-- end blog-list -->
+                </div><!-- end widget -->
+
+               
+                <div class="widget">
+                    <h2 class="widget-title">Popular Categories</h2>
+                    <div class="link-widget">
+                        <ul>
+                             <li><a href="/computer">Computer Science and Engineering </a></li>
+                                <li><a href="/electronics">Electronics and Communication Engineering </a></li>
+                                <li><a href="/electrical">Electrical Engineering</a></li>
+                                <li><a href="/mechanical">Mechanical Engineering </a></li>
+                                <li><a href="/civil">Civil Engineering </a></li>
+                            
+                        </ul>
+                    </div><!-- end link-widget -->
+                </div><!-- end widget -->
+            </div><!-- end sidebar -->
+        </div><!-- end col -->
+
+           <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+               <div class="page-wrapper">
+                {% for i in placement %}
+                   <div class="blog-list clearfix">
+                       <div class="blog-box row">
+                        
+                           <div class="col-md-4">
+                               <div class="post-media">
+                                   <a href="{% url 'detailsnews' pk=i.id %}" title="">
+                                       <img src="{{i.img.url}}" alt="" class="img-fluid">
+                                       <div class="hovereffect"></div>
+                                   </a>
+                               </div><!-- end media -->
+                           </div><!-- end col -->
+
+                           <div class="blog-meta big-meta col-md-8">
+                               <h4><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.headlines}}</a></h4>
+                               {{i.details|safe|truncatewords:36}}<br>
+                               <small><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.dept}}</a></small>
+                               <small><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.postedtime}}</a></small>
+                                
+                           </div><!-- end meta -->
+                       </div><!-- end blog-box -->
+
+                       <hr class="invis">
+                            {% endfor %}
+                     </div><!-- end blog-list -->
+               </div><!-- end page-wrapper -->
+            </div><!-- end col -->
+
+          
+       </div><!-- end row -->
+   </div><!-- end container -->
+</section>
+{% endblock content %}

@@ -1,0 +1,165 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -CareerDevelopmentCell
+{% endblock title %}
+
+{% block content %}
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="  bg-green"></i> Career Development Cell <small class="hidden-xs-down hidden-sm-down">
+                    Gargi Memorial Institute of Technology. </small></h2>
+            </div><!-- end col -->
+            <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href=" {% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'placement' %}">Placement</a></li>
+                    <li class="breadcrumb-item active">Career Development Cell </li>
+                </ol>
+            </div><!-- end col -->                    
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end page-title -->
+<section class="section wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                <div class="page-wrapper">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1">
+                            
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+
+                    <hr class="invis">
+
+                    <div class="blog-grid-system">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="{% url 'single' %}" title="">
+                                            <img src="/static/upload/cdc1_img.jpeg" alt="" style="height:355px; weight:458px"class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span></span>
+                                            </div><!-- end hover -->
+                                        </a>
+                                    </div><!-- end media -->
+                                    <div class="blog-meta big-meta">
+                                        <h4><a href="{% url 'single' %}" title="">Career Development Cell</a></h4>
+                                        <p>The Career Development Cell (CDC) is committed to provide all possible assistance to the students of GMIT in their efforts to find employment. Headed by Mr Sudip</p>
+                                        
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end col -->
+
+                            <div class="col-md-6">
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="{% url 'single1' %}" title="">
+                                            <img src="/static/upload/cdc_img2.jpeg" alt="" style="height:355px; weight:458px" class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span></span>
+                                            </div><!-- end hover -->
+                                        </a>
+                                    </div><!-- end media -->
+                                    <div class="blog-meta big-meta">
+                                        <h4><a href="{% url 'single1' %}" title="">To visit the fairy chimneys and antique cities in Turkey</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
+                                           
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end col -->
+
+                            <div class="col-md-6">
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="{% url 'single2' %}" title="">
+                                            <img src="/static/upload/cdc_img3.jpeg" alt="" style="height:355px; weight:458px"class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span></span>
+                                            </div><!-- end hover -->
+                                        </a>
+                                    </div><!-- end media -->
+                                    <div class="blog-meta big-meta">
+                                        <h4><a href="{% url 'single2' %}" title="">Travel to the oldest city in the world in Mardin</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
+                                            
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end col -->
+
+                            <div class="col-md-6">
+                                <div class="blog-box">
+                                    <div class="post-media">
+                                        <a href="{% url 'single3' %}" title="">
+                                            <img src="/static/upload/cdc_img4.jpeg" alt="" style="height:355px; weight:458px"class="img-fluid">
+                                            <div class="hovereffect">
+                                                <span></span>
+                                            </div><!-- end hover -->
+                                        </a>
+                                    </div><!-- end media -->
+                                    <div class="blog-meta big-meta">
+                                        <h4><a href="{% url 'single3' %}" title="">We went to a city made of stone houses</a></h4>
+                                        <p>Aenean interdum arcu blandit, vehicula magna non, placerat elit. Mauris et pharetratortor. Suspendissea sodales urna. In at augue elit. Vivamus enim nibh.</p>
+                                              
+                                    </div><!-- end meta -->
+                                </div><!-- end blog-box -->
+                            </div><!-- end col -->
+
+                            
+
+                            
+                        </div><!-- end row -->
+                    </div><!-- end blog-grid-system -->
+                </div><!-- end page-wrapper -->
+
+                <hr class="invis3">
+
+                
+            </div><!-- end col -->
+
+            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                <div class="sidebar">
+                 <div class="widget">
+                        <h2 class="widget-title">Recent Posts</h2>
+                        <div class="blog-list-widget">
+                            <div class="list-group">
+                                {% for i in FourNews %}
+                                <a href="{% url 'detailsnews' pk=i.id %}" 
+                                class="list-group-item list-group-item-action flex-column align-items-start">
+                                    <div class="w-100 justify-content-between">
+                                        <img src="{{i.img.url}}" alt="" class="img-fluid float-left">
+                                        <h5 class="mb-1">{{i.headlines}}</h5>
+                                        <small>{{i.postedtime}}</small>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                               
+                            </div>
+                        </div><!-- end blog-list -->
+                    </div><!-- end widget -->
+    
+                   
+                    <div class="widget">
+                        <h2 class="widget-title">Popular Categories</h2>
+                        <div class="link-widget">
+                            <ul>
+                                 <li><a href="/computer">Computer Science and Engineering </a></li>
+                                    <li><a href="/electronics">Electronics and Communication Engineering </a></li>
+                                    <li><a href="/electrical">Electrical Engineering</a></li>
+                                    <li><a href="/mechanical">Mechanical Engineering </a></li>
+                                    <li><a href="/civil">Civil Engineering </a></li>
+                                
+                            </ul>
+                        </div><!-- end link-widget -->
+                    </div><!-- end widget -->
+                </div><!-- end sidebar -->
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+
+  {% endblock content %}

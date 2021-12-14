@@ -1,0 +1,100 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -Single 
+{% endblock title %}
+
+{% block content %}
+    
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-title-area">
+                                <ol class="breadcrumb hidden-xs-down">
+                                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'CareerDevelopmentCell' %}">CDC</a></li>
+                                    <li class="breadcrumb-item active">Career Development Cell</li>
+                                </ol>
+
+                                <span class="color-aqua"><a href="blog-category-01.html" title="">CDC</a></span>
+ 
+                            </div><!-- end title -->
+
+                            <div class="single-post-media">
+                            <h3><strong>Career Development Cell </strong></h3>
+                                <img src="/static/upload/cdc1_img.jpeg" alt="" class="img-fluid">
+                            </div><!-- end media -->
+
+                            <div class="blog-content">  
+                                <div class="pp">
+                                    
+
+                                    <p>The Career Development Cell (CDC) is committed to provide all possible assistance to the students of GMIT in their efforts to find employment. Headed by Mr Sudip Mukherjee, Director-CDC & Ex-GM, ArcelorMittal, the cell is an 8-member team, comprising of one faculty member from each department and the Training & Placement Officers (TPOs).The success of CDC is reflected in the students being constantly able to secure lucrative industry placements since the conception of the cell.</p>
+
+
+
+                                    <h4>GMIT offers 4 years Full time B.Tech degree spread over 8 semesters in the following subjects</h4>
+                                    <img src="/static/upload/cdc.jpeg" alt=""  =class="img-fluid">
+                                    
+                                    <ul class="check">
+                                        <li>Computer Science and Engineering.</li>
+                                        <li>Electronics and Communication Engineering.</li>
+                                        <li>Electrical Engineering.</li>
+                                        <li>Mechanical Engineering.</li>
+                                        <li>Civil Engineering.</li>
+                                    </ul>
+
+                                    
+
+                                   
+
+                                    
+                                </div><!-- end pp -->
+                            </div><!-- end content -->
+
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                         <div class="widget">
+                                <h2 class="widget-title">Recent Posts</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        {% for i in FourNews %}
+                                        <a href="{% url 'detailsnews' pk=i.id %}" 
+                                        class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="{{i.img.url}}" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">{{i.headlines}}</h5>
+                                                <small>{{i.postedtime}}</small>
+                                            </div>
+                                        </a>
+                                        {% endfor %}
+                                       
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+            
+                           
+                            <div class="widget">
+                                <h2 class="widget-title">Popular Categories</h2>
+                                <div class="link-widget">
+                                    <ul>
+                                         <li><a href="/computer">Computer Science and Engineering </a></li>
+                                            <li><a href="/electronics">Electronics and Communication Engineering </a></li>
+                                            <li><a href="/electrical">Electrical Engineering</a></li>
+                                            <li><a href="/mechanical">Mechanical Engineering </a></li>
+                                            <li><a href="/civil">Civil Engineering </a></li>
+                                        
+                                    </ul>
+                                </div><!-- end link-widget -->
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+{% endblock content %}

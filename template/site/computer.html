@@ -1,0 +1,70 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -Computer
+{% endblock title %}
+
+{% block content %}
+<div class="page-title wb">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <h2><i class="fa   bg-grey"></i> Computer Science and Engineering 
+                    <small class="hidden-xs-down hidden-sm-down">Gargi Memorial Institute of Technology. </small></h2>
+            </div><!-- end col -->
+            <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href=" {% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'CareerDevelopmentCell' %}">CDC</a></li>
+                    <li class="breadcrumb-item active">CSE DEPARTMENT</li>
+                </ol>
+            </div><!-- end col -->                    
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end page-title -->
+<center>  
+<section class="section wb">
+    <div class="container">
+        <div class="row">
+             
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                
+                <div class="page-wrapper">
+                    <div class="portfolio row">
+                        
+                        <div class="pitem item-w1 item-h1">
+                            {% for i in computer %}
+                            <div class="blog-box">
+                                <div class="post-media">
+                                    
+                                    <a href="{% url 'detailsnews' pk=i.id %}" title="">
+                                        <img src="{{i.img.url}}" alt="" style="height:320px; weight:250px"class="img-fluid">
+                                        <div class="hovereffect">
+                                            <span></span>
+                                        </div><!-- end hover -->
+                                    </a>
+                                </div><!-- end media -->
+                                <div class="blog-meta">
+                                    <span class="bg-grey"><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.dept}}</a></span>
+                                    <h4><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.headlines|truncatewords:10}}</a></h4>
+                                    {{i.details|safe|truncatewords:10}}
+                                    <a href="{% url 'detailsnews' pk=i.id %}">Read More</a><br>
+                                    <small><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.postedtime}}</a></small>
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            {% endfor %}
+                        </div><!-- end col -->
+                   
+                    </div><!-- end portfolio -->
+                </div><!-- end page-wrapper -->
+           
+                <hr class="invis">
+ 
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section>
+</center>
+   
+
+   {% endblock content %}

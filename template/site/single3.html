@@ -1,0 +1,98 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -Single 
+{% endblock title %}
+
+{% block content %}
+    
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-title-area">
+                                <ol class="breadcrumb hidden-xs-down">
+                                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'CareerDevelopmentCell' %}">CDC</a></li>
+                                    <li class="breadcrumb-item active">Career Development Cell</li>
+                                </ol>
+
+                                <span class="color-aqua"><a href="blog-category-01.html" title="">CDC</a></span>
+ 
+                            </div><!-- end title -->
+
+
+                            <div class="single-post-media">
+                            <h3><strong>Nam non velit est. Sed lobortis arcu vitae nunc molestie consectetur. Nam eget neque ac ex fringilla dignissim eu ac est. Nunc et nisl vel odio posuere. </strong></h3>
+                                <img src="/static/upload/menu_08.jpg" alt="" class="img-fluid">
+                            </div><!-- end media -->
+
+                            <div class="blog-content">  
+                                <div class="pp">
+                                    
+
+                                    <p>Vivamus non condimentum orci. Pellentesque venenatis nibh sit amet est vehicula lobortis. Cras eget aliquet eros. Nunc lectus elit, suscipit at nunc sed, finibus imperdiet ipsum. Maecenas dapibus neque sodales nulla finibus volutpat. Integer pulvinar massa vitae ultrices posuere. Proin ut tempor turpis. Mauris felis neque, egestas in lobortis et, sodales non ante. Ut vestibulum libero quis luctus tempus. Nullam eget dignissim massa. Vivamus id condimentum orci. Nunc ac sem urna. Aliquam et hendrerit nisl massa nunc. </p>
+
+                                    <p>Morbi pharetra porta consequat. Aenean et diam sapien. <a href="#">Interdum et malesuada</a> fames ac ante ipsum primis in faucibus. Pellentesque dictum ligula iaculis, feugiat metus eu, sollicitudin ex. Quisque eu ullamcorper ligula. In vel ex ac purus finibus viverra. Maecenas pretium lobortis turpis. Fusce lacinia nisi in tortor massa nunc.</p>
+
+                                    <ul class="check">
+                                        <li>Integer sit amet odio ac lectus imperdiet elementum.</li>
+                                        <li>Praesent vitae lacus sed lacus ullamcorper mollis.</li>
+                                        <li>Donec vitae metus ac felis vulputate tincidunt non et ex.</li>
+                                        <li>In dapibus sapien at viverra venenatis.</li>
+                                        <li>Pellentesque mollis velit id maximus finibus.</li>
+                                    </ul>
+
+                                    <p>Proin ultricies nulla consectetur, sollicitudin dolor at, sollicitudin mauris. Maecenas at nunc nunc. Ut nulla felis, tincidunt et porttitor at, rutrum in dolor. Aenean id tincidunt ligula. Donec vitae placerat odio. Mauris accumsan nibh ut nunc maximus, ac auctor elit vehicula. Cras leo sem, vehicula a ultricies ac, condimentum vitae lectus. Sed ut eros euismod, luctus nisl eu, congue odio. </p>
+
+                                   
+
+                                    
+                                </div><!-- end pp -->
+                            </div><!-- end content -->
+
+                        </div><!-- end page-wrapper -->
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                         <div class="widget">
+                                <h2 class="widget-title">Recent Posts</h2>
+                                <div class="blog-list-widget">
+                                    <div class="list-group">
+                                        {% for i in FourNews %}
+                                        <a href="{% url 'detailsnews' pk=i.id %}" 
+                                        class="list-group-item list-group-item-action flex-column align-items-start">
+                                            <div class="w-100 justify-content-between">
+                                                <img src="{{i.img.url}}" alt="" class="img-fluid float-left">
+                                                <h5 class="mb-1">{{i.headlines}}</h5>
+                                                <small>{{i.postedtime}}</small>
+                                            </div>
+                                        </a>
+                                        {% endfor %}
+                                       
+                                    </div>
+                                </div><!-- end blog-list -->
+                            </div><!-- end widget -->
+            
+                           
+                            <div class="widget">
+                                <h2 class="widget-title">Popular Categories</h2>
+                                <div class="link-widget">
+                                    <ul>
+                                         <li><a href="/computer">Computer Science and Engineering </a></li>
+                                            <li><a href="/electronics">Electronics and Communication Engineering </a></li>
+                                            <li><a href="/electrical">Electrical Engineering</a></li>
+                                            <li><a href="/mechanical">Mechanical Engineering </a></li>
+                                            <li><a href="/civil">Civil Engineering </a></li>
+                                        
+                                    </ul>
+                                </div><!-- end link-widget -->
+                            </div><!-- end widget -->
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+{% endblock content %}

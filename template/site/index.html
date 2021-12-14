@@ -1,0 +1,128 @@
+{% extends 'core\deptBase.html' %}
+
+{% block title %}
+{{block.super}} -Home
+{% endblock title %}
+
+{% block content %}
+    <section class="section first-section">
+        <div class="container-fluid">
+                <div class="masonry-blog clearfix">
+                    <div class="left-side">
+                        <div class="masonry-box post-media">
+                             <img src="/static/upload/computer.jpeg " alt="" style="height:385px; weight:468px" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                                  
+                                        <span class="bg-aqua"><a href="{% url 'computer' %}" title="">Computer Science</a></span>
+                                      <h4><a href="{% url 'computer' %}" title="">Separate your place with exotic hotels</a></h4>
+                                        <a href="{% url 'computer' %}" target="_blank">
+                                        <small><a href="{% url 'single' %}" title=""> </a></small>
+                                        
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end left-side -->
+
+                    <div class="center-side">
+                        <div class="masonry-box post-media">
+                            <img src="/static/upload/ece.jpeg" alt="" style="height:215px; weight:250px" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-green"><a href="{% url 'electronics' %}" title="">Electronics and Communication</a></span>
+                                        <h4><a href="{% url 'electronics' %}" title="">5 places you should see</a></h4>
+                                       
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+
+                        <div class="masonry-box small-box post-media">
+                             <img src="/static/upload/ce.jpeg " alt="" style="height:160px; weight:250px" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-green"><a href="{% url 'civil' %}" title="">Civil</a></span>
+                                        <h4><a href="{% url 'civil' %}" title="">Separate your place with exotic hotels</a></h4>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+
+                        <div class="masonry-box small-box post-media">
+                             <img src="/static/upload/me.jpeg " alt="" style="height:160px; weight:250px" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-green"><a href="{% url 'mechanical' %}" title="">Mechanical</a></span>
+                                        <h4><a href="{% url 'mechanical' %}" title="">What you need to know for child health</a></h4>
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                            </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end left-side -->
+
+                    <div class="right-side hidden-md-down">
+                        <div class="masonry-box post-media">
+                             <img src="/static/upload/ee.jpeg " alt=""  style="height:385px; weight:468px" class="img-fluid">
+                             <div class="shadoweffect">
+                                <div class="shadow-desc">
+                                    <div class="blog-meta">
+                                        <span class="bg-aqua"><a href="{% url 'electrical' %}" title="">Electrical</a></span>
+                                        <h4><a href="{% url 'electrical' %}" title="">The rules you need to know for a happy union</a></h4>
+                                        
+                                    </div><!-- end meta -->
+                                </div><!-- end shadow-desc -->
+                             </div><!-- end shadow -->
+                        </div><!-- end post-media -->
+                    </div><!-- end right-side -->
+                </div><!-- end masonry -->
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                  
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="blog-list clearfix">
+                            <div class="section-title">
+                                <h3 class="color-green"><a title="">Latest News</a></h3>
+                            </div><!-- end title -->
+
+                            {% for i in SevenNews%}
+                            <div class="blog-box row">
+                                <div class="col-md-4">
+                                    <div class="post-media">
+                                        <a href="{% url 'detailsnews' pk=i.id %}" title="">
+                                            <img src="{{i.img.url}}" alt="" class="img-fluid">
+                                            <div class="hovereffect"></div>
+                                        </a>
+                                    </div><!-- end media -->
+                                </div><!-- end col -->
+
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.headlines}}</a></h4>
+                                    {{i.details|safe|truncatewords:30}}<br>
+                                    <small><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.dept}}</a></small>
+                                    <small><a href="{% url 'detailsnews' pk=i.id %}" title="">{{i.postedtime}}</a></small>
+                                   
+                                </div><!-- end meta -->
+                            </div><!-- end blog-box -->
+                            <hr class="invis">
+                            {% endfor %}
+    
+
+
+                            <div class="blog-box">
+                         <hr class="invis">
+                          </div><!-- end banner-img -->
+                        </div><!-- end banner -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+  {% endblock content %}

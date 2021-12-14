@@ -1,0 +1,36 @@
+{% extends 'core\deptBase.html' %}
+{% load static %}
+{% block title %}DEPT-CSE-INTRODUCTION{% endblock title %}
+{% block content %}
+  
+  <section class="section wb">
+  <div class="container">
+    <div class="row">
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="page-wrapper">
+          <div class="blog-title-area">
+            <h2>{{detailsnews.headlines}}</h2>
+           <strong> <p class='meta'>{{detailsnews.dept}}</p>
+            <p class='meta'>{{detailsnews.postedtime}} by <a href='#'>{{author}}</a></p>
+            </strong>
+            </div>
+            </div>
+            </div>
+            </div>
+        <div class="pp">
+           
+             
+                  <img src="{{detailsnews.img.url}}" alt="Lights" style="width:100%">
+                  <div>                                            
+                  </div>
+                </a>
+              </div>
+            </div>
+  <div class="pp">           
+<div class="contact_area">
+{{detailsnews.details|safe}}
+        </div>
+
+ <a  href="{% url page %}"><strong>Back</strong></a>       
+</section>
+{% endblock content %}

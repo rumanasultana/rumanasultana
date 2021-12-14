@@ -1,0 +1,46 @@
+{% extends 'core\deptBase.html' %}
+{% load static %}
+{% block title %}
+{{block.super}} -Mechanical {% endblock title %}
+
+{% block content %}
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-title-area">
+                                <ol class="breadcrumb hidden-xs-down">
+                                    <li class="breadcrumb-item"><a href=" {% url 'home' %}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'CareerDevelopmentCell' %}">CDC</a></li>
+                                    <li class="breadcrumb-item active">Mechanical Engineering</li>
+                                </ol>
+
+                                <span class="color-grey"><a>Department</a></span>
+
+                                <h3>Mechanical Engineering</h3>
+ 
+                            </div><!-- end title -->
+             {% for i in mechanical %} 
+<h3><strong>{{i.headlines|truncatewords:5}}</strong></h3>
+{{i.details|safe|truncatewords:16}}
+<a href="{% url 'detailsnews' pk=i.id %}" target="_blank">
+<img src="{{i.img.url}} " alt="Nature" class="img-fluid img-fullwidth">
+
+<div class="pp">
+</a>  
+{{i.details|safe|truncatewords:16}}
+<a href="{% url 'detailsnews' pk=i.id %}">Read More</a>
+</div><!-- end pp -->
+</div><!-- end content -->
+{% empty %}
+<div>
+<h1>No News Found, may be cdc not approved any news</h1>
+</div>
+{% endfor %}
+</div><!-- end page-wrapper -->
+</div><!-- end col -->               
+</section>
+{% endblock content %}
+      
