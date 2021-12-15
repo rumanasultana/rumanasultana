@@ -94,13 +94,7 @@ DATABASES = {
      }
  }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
+ 
 
 # DATABASES = {
 #     'default': {
@@ -154,7 +148,7 @@ STATICFILES_DIRS = [STATIC_DIR]
 STATIC_URL = '/static/'
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media/"
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
 
