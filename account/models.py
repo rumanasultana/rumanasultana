@@ -77,6 +77,7 @@ NewsDeptChoice = [
     ('admission', 'Admission'),
     ('event', 'Event'),
     ('CareerDevelopmentCell', 'CareerDevelopmentCell'),
+    
 ]
 
 

@@ -1,0 +1,155 @@
+{% extends 'core\deptBase.html' %}
+{% load static %}
+{% block title %}
+{{block.super}} -Web Series {% endblock title %}
+
+{% block content %}
+
+        <div class="page-title wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <h2><i class="fa fa-play bg-yellow"></i> Web Series<small class="hidden-xs-down hidden-sm-down">Gargi Memorial Institute of Technology.</small></h2>
+                    </div><!-- end col -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'CareerDevelopmentCell'%}">CDC</a></li>
+                            <li class="breadcrumb-item active">Web Series</li>
+                        </ol>
+                    </div><!-- end col -->                    
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </div><!-- end page-title -->
+
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-wrapper">
+                            <div class="blog-video-system">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="blog-box">
+                                            <div class="post-media">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe src="https://www.youtube.com/embed/azXHfHp9ah0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                     
+                                                </div>
+                                            </div><!-- end media -->
+                                            <div class="blog-meta big-meta">
+                                                <h4>GMIT Web Series | S01 | EP 01 - Tathagata comes back to GMIT </h4>
+                                                <p>Tathagata, an alumnus of GMIT comes back to college after 5 years.
+
+                                                    The four golden years of college life woven into a fascinating story around the GMIT campus, unfolding a tale of Success, Nostalgia & Love.</p>
+                                                
+                                                
+                                            </div><!-- end meta -->
+                                            
+                                        </div><!-- end blog-box -->
+                                    </div><!-- end col -->
+
+                                    <div class="col-md-12">
+                                        <div class="blog-box">
+                                            <div class="post-media">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe   src="https://www.youtube.com/embed/buuJQjSkc78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div><!-- end media -->
+                                            <div class="blog-meta big-meta">
+                                                <h4> GMIT Web Series | S01 | EP 02 - SANITIZATION; the new normal</h4>
+                                                <p>Campus Sanitization impresses Tathagata.
+
+                                                    The four golden years of college life woven into a fascinating story around the GMIT campus, unfolding a tale of Success, Nostalgia & Love.</p>
+                                                
+                                            </div><!-- end meta -->
+                                            
+                                        </div><!-- end blog-box -->
+                                    </div><!-- end col -->
+
+                                    <div class="col-md-12">
+                                        <div class="blog-box">
+                                            <div class="post-media">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe  src="https://www.youtube.com/embed/RDCJvHWtW4I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div><!-- end media -->
+                                            <div class="blog-meta big-meta">
+                                                <h4>GMIT Web Series | S01 | EP 03 - ( New age MECH ENGG. Curriculum )</h4>
+                                                <p>Tathagata visits the Mechanical Workshop of GMIT.
+
+                                                    The four golden years of college life woven into a fascinating story around the GMIT campus, unfolding a tale of Success, Nostalgia & Love.</p>
+                                                 
+                                            </div><!-- end meta -->
+                                            
+                                        </div><!-- end blog-box -->
+                                    </div><!-- end col -->
+
+                                    <div class="col-md-12">
+                                        <div class="blog-box">
+                                            <div class="post-media">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe   src="https://www.youtube.com/embed/FeirucN8KCU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div><!-- end media -->
+                                            <div class="blog-meta big-meta">
+                                                <h4>GMIT Web Series | S01 | EP 04 - ( CIVIL ENGG. dept - also about indoors )</h4>
+                                                <p> It's all about Civil Engineering and Prof. Somdev.
+
+                                                    The four golden years of college life woven into a fascinating story around the GMIT campus, unfolding a tale of Success, Nostalgia & Love.</p>
+                                                 
+                                            </div><!-- end meta -->
+                                             
+                                        </div><!-- end blog-box -->
+                                    </div><!-- end col -->
+                                </div><!-- end row -->
+
+                            </div><!-- end blog-grid-system -->
+                        </div><!-- end page-wrapper -->
+
+                        <hr class="invis3">
+
+                        
+                    </div><!-- end col -->
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+                            <div class="widget">
+                                <h2 class="widget-title">Recent Posts</h2>
+                    <div class="blog-list-widget">
+                        <div class="list-group">
+                            {% for i in FourNews %}
+                            <a href="{% url 'detailsnews' pk=i.id %}" 
+                            class="list-group-item list-group-item-action flex-column align-items-start">
+                                <div class="w-100 justify-content-between">
+                                    <img src="{{i.img.url}}" alt="" class="img-fluid float-left">
+                                    <h5 class="mb-1">{{i.headlines}}</h5>
+                                    <small>{{i.postedtime}}</small>
+                                </div>
+                            </a>
+                            {% endfor %}
+                           
+                        </div>
+                    </div><!-- end blog-list -->
+                </div><!-- end widget -->
+
+               
+                <div class="widget">
+                    <h2 class="widget-title">Popular Categories</h2>
+                    <div class="link-widget">
+                        <ul>
+                             <li><a href="/computer">Computer Science and Engineering </a></li>
+                                <li><a href="/electronics">Electronics and Communication Engineering </a></li>
+                                <li><a href="/electrical">Electrical Engineering</a></li>
+                                <li><a href="/mechanical">Mechanical Engineering </a></li>
+                                <li><a href="/civil">Civil Engineering </a></li>
+                            
+                        </ul>
+                    </div><!-- end link-widget -->
+                </div><!-- end widget -->
+            </div><!-- end sidebar -->
+        </div><!-- end col -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section>
+        {% endblock content %}

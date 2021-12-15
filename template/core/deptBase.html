@@ -64,7 +64,15 @@
     .link-widget ul li{
         color: #edeff2;
     }
-
+.header {
+    padding: 0.1rem 0;
+    position: relative;
+    background-color: #174499;
+}
+.header-section {
+    padding: 0.5rem 0 1.5rem;
+    background-color: #d2dcf8f1;
+}
      
     
     </style>
@@ -115,7 +123,7 @@
                             </li> 
 
                             <li class="nav-item">
-                                <a class="nav-link color-red-hover" href="{% url 'CareerDevelopmentCell' %}">Career Development Cell</a>
+                                <a class="nav-link color-red-hover" href="{% url 'CareerDevelopmentCell' %}">CDC</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link color-aqua-hover" href="{% url 'admission' %}">Admission</a>
@@ -123,6 +131,18 @@
                             <li class="nav-item">
                                 <a class="nav-link color-grey-hover" href="{% url 'placement' %}">Placement</a>
                             </li>
+                            <li class="nav-item dropdown has-submenu">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                                 aria-haspopup="true" aria-expanded="false">Catagory</a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                                 <li><a class="dropdown-item" href="{% url 'event' %}">Event</a></li>
+                                     
+                                    <li><a class="dropdown-item" href="{% url 'video' %}">Web Series</a></li>
+                                   
+                                    </ul>
+                            </li> 
+
+                             
                            
                             <li class="nav-item">
                                 <a class="nav-link color-grey-hover" href="{% url 'contact' %}">Contact Us</a>

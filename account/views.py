@@ -240,7 +240,15 @@ def placement(request):
     return render(request, 'site/placement.html', context)
    
  
-
+def video(request):
+    FourNews = approvednews(4)
+    context = {"FourNews": FourNews }
+    return render(request,'site/video.html', context)
+ 
+def event(request):
+    FourNews = approvednews(4)
+    context = {"FourNews": FourNews }
+    return render(request,'site/event.html', context)
 
 def single(request):
     FourNews = approvednews(4)
@@ -285,7 +293,9 @@ def detailsnews(request,pk):
     elif detailsnews.dept=='CDC':
          url='CareerDevelopmentCell'
     elif detailsnews.dept=='Placement':
-         url='placement_01'     
+         url='placement' 
+    elif detailsnews.dept=='Event':
+         url='event'     
     else: 
         url="home"
            

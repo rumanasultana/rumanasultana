@@ -17,6 +17,9 @@ urlpatterns = [
     path('CareerDevelopmentCell/', views.CareerDevelopmentCell,name='CareerDevelopmentCell'),
     path('admission/', views.admission,name='admission'),
     path('placement', views.placement,name='placement'),
+    path('video/', views.video,name='video'),
+    
+    path('event/', views.event,name='event'),
     path('single/', views.single,name='single'),
     path('single1/', views.single1,name='single1'),
     path('single2/', views.single2,name='single2'),
