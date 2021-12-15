@@ -437,9 +437,9 @@ def addnews(request):
             })
 
     if request.method == 'POST':
-        NewsForm = NewsManagement(request.POST, request.FILES)
-        if NewsForm.is_valid():
-            news = NewsForm.save(commit=False)
+        newsform = NewsManagement(request.POST, request.FILES)
+        if newsform.is_valid():
+            news = newsform.save(commit=False)
             news.status = False
             news.owner = request.user.id
             news.postedtime = date.today()
@@ -448,13 +448,13 @@ def addnews(request):
                 request, 'Your News Details is submited and wait for CDC process')
             return redirect('allnews')
         else:
-            messages.warning(request, NewsForm.errors)
+            messages.warning(request, newsform.errors)
 
     else:
-        NewsForm = NewsManagement()
+        newsform = NewsManagement()
 
     context = {'StudentData': userdata, 'NewsData': newsdetails,
-               'NewsForm': NewsForm}
+               'NewsForm': newsform}
     return render(request, 'news/addnews.html', context)
 
 
